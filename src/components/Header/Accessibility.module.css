@@ -1,0 +1,19 @@
+.accessibility {
+  display: flex;
+  align-items: center;
+}
+
+.login {
+  color: white;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Ubuntu", sans-serif;
+  text-decoration: none;
+  margin-right: 2rem;
+}
+
+.login:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 3px;
+}
