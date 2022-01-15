@@ -4,7 +4,7 @@ import styles from "./Nav.module.css";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import Accessibility from "../Accessibility";
-import MobileMenu from "./MobileMenu";
+import MobileNav from "../MobileNav/MobileNav";
 
 const Nav = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
@@ -15,15 +15,11 @@ const Nav = () => {
   return (
     <nav className={styles.navbar}>
       <Logo className={styles["navbar--left"]} />
-      <NavLinks
-        className={styles["navbar--middle"]}
-        isMobile={isMobile}
-        menuOpen={menuIsOpen}
-      />
+      {!isMobile && <NavLinks className={styles["navbar--middle"]} />}
       {!isMobile && (
         <Accessibility className={styles["navbar--right"]} nav="true" />
       )}
-      {isMobile && <MobileMenu toggle={toggleMenu} isOpen={menuIsOpen} />}
+      {isMobile && <MobileNav className={styles["navbar--right"]} />}
     </nav>
   );
 };
