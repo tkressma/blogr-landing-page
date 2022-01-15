@@ -1,16 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { useMediaQuery } from "react-responsive";
 import styles from "./Nav.module.css";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
 import Accessibility from "../Accessibility";
-import MobileNav from "../MobileNav/MobileNav";
+import MobileNav from "./MobileNav";
 
 const Nav = () => {
   const isMobile = useMediaQuery({ maxWidth: 768 });
-  const [menuIsOpen, setMenuIsOpen] = useState(false);
-
-  const toggleMenu = () => setMenuIsOpen(!menuIsOpen);
 
   return (
     <nav className={styles.navbar}>
