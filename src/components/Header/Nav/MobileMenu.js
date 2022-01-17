@@ -5,7 +5,7 @@ import React from "react";
 const Path = (props) => (
   <motion.path
     fill="transparent"
-    stroke-linecap="square"
+    strokeLinecap="square"
     strokeWidth="2"
     {...props}
   />

@@ -5,10 +5,10 @@ import React from "react";
 
 const Accessibility = (props) => {
   return (
-    <section class={`${props.className} ${styles.accessibility}`}>
+    <section className={`${props.className} ${styles.accessibility}`}>
       {props.nav === "true" ? (
         <React.Fragment>
-        <a href="#" class={styles.login}>
+        <a href="#" className={styles.login}>
           Login
         </a>
       <PrimaryButton text="Sign Up" />

@@ -1,5 +1,6 @@
 .link {
   display: flex;
+  position: relative;
   align-items: center;
   gap: 8px;
   color: white;
@@ -21,4 +22,8 @@
   color: inherit;
   font-size: inherit;
   opacity: 0.75;
+}
+
+.active {
+  opacity: 100%;
 }

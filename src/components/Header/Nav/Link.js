@@ -5,7 +5,6 @@ const Link = (props) => {
     <li className={styles.link}>
       <a href="#display">{props.name}</a>
       <img src={lightArrow} />
-
     </li>
   );
 };
