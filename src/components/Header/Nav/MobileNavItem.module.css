@@ -1,0 +1,23 @@
+.mobile-item {
+    font-family: 'Overpass', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: #1F3E5A;
+    cursor: pointer;
+    display: flex;
+    gap: 8px;
+    padding: 12px 0;
+    align-items: center;
+}
+
+.mobile-item.active {
+    opacity: 75%;
+}
+
+.animate {
+    transition: transform .35s ease-in-out;
+}
+  
+.animate.rotate {
+    transform: rotate(-180deg);
+}

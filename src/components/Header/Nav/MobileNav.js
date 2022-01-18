@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import NavItem from "./NavItem";
+import MobileNavItem from "./MobileNavItem";
 import styles from "../Nav/NavItems.module.css";
 import MobileMenu from "./MobileMenu";
 import classNames from 'classnames';
@@ -9,6 +9,9 @@ const MobileNav = (props) => {
   const mobileMenuRef = useRef(null)
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [menuAnimation, setMenuAnimation] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const items = ["Product", "Company", "Connect"];
 
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
@@ -16,6 +19,10 @@ const MobileNav = (props) => {
       setMenuAnimation(!menuAnimation);
     }, 10);
   };
+
+  const handleActive = (index) => {
+    activeIndex === index ? setActiveIndex(null) : setActiveIndex(index);
+  }
 
   // If a user clicks out of the dropdown menu, close it.
 
@@ -43,9 +50,9 @@ const MobileNav = (props) => {
 
       {menuIsOpen && (
         <ul className={classNames(props.className, styles["links-wrapper-mobile"], styles.animate, menuAnimation && styles.fadein)} ref={dropdownRef} >
-          <NavItem name="Product" />
-          <NavItem name="Company" />
-          <NavItem name="Connect" />
+
+        {items.map((item, index) => <MobileNavItem key={index} name={item} active={index===activeIndex} onClick={() => handleActive(index)}/>)}
+
         </ul>
       )}
     </React.Fragment>
