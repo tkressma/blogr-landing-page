@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styles from "./NavItems.module.css";
 import Link from "./NavItem";
 const NavItems = (props) => {
-  const items = ["Product", "Company", "Connect"];
   const [activeIndex, setActiveIndex] = useState(null);
 
   const handleActive = (index) => {
@@ -12,7 +11,7 @@ const NavItems = (props) => {
 
   return (
     <ul className={`${props.className} ${styles["links-wrapper"]}`}>
-    {items.map((item, index) => <Link key={index} name={item} active={index === activeIndex} onClick={() => handleActive(index)}/>)}
+    {props.navItems.map((item, index) => <Link key={index} name={item.title} active={index === activeIndex} onClick={() => handleActive(index)}/>)}
     </ul>
   );
 };

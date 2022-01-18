@@ -11,8 +11,6 @@ const MobileNav = (props) => {
   const [menuAnimation, setMenuAnimation] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
 
-  const items = ["Product", "Company", "Connect"];
-
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
     setTimeout(() => {
@@ -49,7 +47,7 @@ const MobileNav = (props) => {
       
         <ul className={classNames(props.className, styles["links-wrapper-mobile"], !menuIsOpen && styles.fadeout)} ref={dropdownRef} >
 
-        {items.map((item, index) => <MobileNavItem key={index} name={item} active={index===activeIndex} onClick={() => handleActive(index)}/>)}
+        {props.navItems.map((item, index) => <MobileNavItem key={index} name={item.title} subItems={item.subItems} active={index===activeIndex} onClick={() => handleActive(index)}/>)}
 
         </ul>
       
