@@ -5,7 +5,6 @@
 }
 
 .links-wrapper-mobile {
-  opacity: 0%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,14 +18,28 @@
   max-width: 325px;
   padding: 12px 24px 32px;
   box-shadow: 0px 10px 20px 8px rgba(0, 0, 0, 0.25);
+  animation: fadein .35s linear forwards;
 }
 
-.animate {
-  transition: opacity .25s ease-in-out;
+.fadeout {
+  animation: fadeout .35s linear forwards;
 }
 
-.animate.fadein {
-  opacity: 100%;
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@keyframes fadeout {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
 }
 
 @media (min-width: 1000px) {

@@ -25,8 +25,6 @@ const MobileNav = (props) => {
   }
 
   // If a user clicks out of the dropdown menu, close it.
-
-  // TODO: Fix bug where menu does not close
   useEffect(() => {
     const handleClickOutside = event => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -48,13 +46,13 @@ const MobileNav = (props) => {
         ref={mobileMenuRef}
       />
 
-      {menuIsOpen && (
-        <ul className={classNames(props.className, styles["links-wrapper-mobile"], styles.animate, menuAnimation && styles.fadein)} ref={dropdownRef} >
+      
+        <ul className={classNames(props.className, styles["links-wrapper-mobile"], !menuIsOpen && styles.fadeout)} ref={dropdownRef} >
 
         {items.map((item, index) => <MobileNavItem key={index} name={item} active={index===activeIndex} onClick={() => handleActive(index)}/>)}
 
         </ul>
-      )}
+      
     </React.Fragment>
   );
 };
