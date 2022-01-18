@@ -7,6 +7,8 @@
   font-size: 1rem;
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
+  opacity: 0.75;
+  cursor: pointer;
   margin: 0 1rem;
 }
 
@@ -14,14 +16,6 @@
   text-decoration: underline;
   text-underline-offset: 3px;
   text-decoration-thickness: 3px;
-}
-
-.link > a {
-  height: 100%;
-  text-decoration: none;
-  color: inherit;
-  font-size: inherit;
-  opacity: 0.75;
 }
 
 .active {

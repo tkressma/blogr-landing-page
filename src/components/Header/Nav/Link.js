@@ -3,7 +3,7 @@ import lightArrow from "../../../assets/icon-arrow-light.svg"
 const Link = (props) => {
   return (
     <li className={styles.link}>
-      <a href="#display">{props.name}</a>
+      {props.name}
       <img src={lightArrow} />
     </li>
   );

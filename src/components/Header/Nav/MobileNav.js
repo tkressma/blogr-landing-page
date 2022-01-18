@@ -7,13 +7,19 @@ const MobileNav = (props) => {
   const dropdownRef = useRef(null);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  const toggleMenu = () => setMenuIsOpen(!menuIsOpen);
+  const toggleMenu = () => {
+    console.log(menuIsOpen)
+
+    setMenuIsOpen(!menuIsOpen);
+  };
 
   // If a user clicks out of the dropdown menu, close it.
+
+  // TODO: Fix bug where menu does not close
   useEffect(() => {
     const handleClickOutside = event => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        setMenuIsOpen(false);
+        toggleMenu();
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
