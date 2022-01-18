@@ -2,15 +2,19 @@ import React, { useState, useRef, useEffect } from "react";
 import NavItem from "./NavItem";
 import styles from "../Nav/NavItems.module.css";
 import MobileMenu from "./MobileMenu";
+import classNames from 'classnames';
 
 const MobileNav = (props) => {
   const dropdownRef = useRef(null);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
 
-  const toggleMenu = () => {
-    console.log(menuIsOpen)
+  const [menuAnimation, setMenuAnimation] = useState(false);
 
+  const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
+    setTimeout(() => {
+      setMenuAnimation(!menuAnimation);
+    }, 10);
   };
 
   // If a user clicks out of the dropdown menu, close it.
@@ -37,7 +41,7 @@ const MobileNav = (props) => {
       />
 
       {menuIsOpen && (
-        <ul className={`${props.className} ${styles["links-wrapper-mobile"]}`} ref={dropdownRef} >
+        <ul className={classNames(props.className, styles["links-wrapper-mobile"], styles.animate, menuAnimation && styles.fadein)} ref={dropdownRef} >
           <NavItem name="Product" />
           <NavItem name="Company" />
           <NavItem name="Connect" />
