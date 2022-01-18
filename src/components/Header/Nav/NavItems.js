@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import styles from "./NavLinks.module.css";
-import Link from "./Link";
-const NavLinks = (props) => {
+import styles from "./NavItems.module.css";
+import Link from "./NavItem";
+const NavItems = (props) => {
   const items = ["Product", "Company", "Connect"];
   const [activeIndex, setActiveIndex] = useState(null);
 
@@ -17,4 +17,4 @@ const NavLinks = (props) => {
   );
 };
 
-export default NavLinks;
+export default NavItems;

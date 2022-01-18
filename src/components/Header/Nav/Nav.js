@@ -2,7 +2,7 @@ import React from "react";
 import { useMediaQuery } from "react-responsive";
 import styles from "./Nav.module.css";
 import Logo from "./Logo";
-import NavLinks from "./NavLinks";
+import NavItems from "./NavItems";
 import Accessibility from "../Accessibility";
 import MobileNav from "./MobileNav";
 
@@ -12,7 +12,7 @@ const Nav = () => {
   return (
     <nav className={styles.navbar}>
       <Logo className={styles["navbar--left"]} />
-      {!isMobile && <NavLinks className={styles["navbar--middle"]} />}
+      {!isMobile && <NavItems className={styles["navbar--middle"]} />}
       {!isMobile && (
         <Accessibility className={styles["navbar--right"]} nav="true" />
       )}

@@ -1,8 +1,8 @@
-import styles from "./Link.module.css";
+import styles from "./NavItem.module.css";
 import classNames from 'classnames';
 import lightArrow from "../../../assets/icon-arrow-light.svg"
 
-const Link = (props) => {
+const NavItem = (props) => {
   return (
     <li key={props.key} className={classNames(styles.link, props.active && styles.active)} onClick={props.onClick} >
       {props.name}
@@ -11,4 +11,4 @@ const Link = (props) => {
   );
 };
 
-export default Link;
+export default NavItem;

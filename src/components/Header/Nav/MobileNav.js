@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import Link from "./Link";
-import styles from "../Nav/NavLinks.module.css";
+import NavItem from "./NavItem";
+import styles from "../Nav/NavItems.module.css";
 import MobileMenu from "./MobileMenu";
 
 const MobileNav = (props) => {
@@ -38,9 +38,9 @@ const MobileNav = (props) => {
 
       {menuIsOpen && (
         <ul className={`${props.className} ${styles["links-wrapper-mobile"]}`} ref={dropdownRef} >
-          <Link name="Product" />
-          <Link name="Company" />
-          <Link name="Connect" />
+          <NavItem name="Product" />
+          <NavItem name="Company" />
+          <NavItem name="Connect" />
         </ul>
       )}
     </React.Fragment>
