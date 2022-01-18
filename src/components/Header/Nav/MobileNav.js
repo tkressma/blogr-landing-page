@@ -6,8 +6,8 @@ import classNames from 'classnames';
 
 const MobileNav = (props) => {
   const dropdownRef = useRef(null);
+  const mobileMenuRef = useRef(null)
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-
   const [menuAnimation, setMenuAnimation] = useState(false);
 
   const toggleMenu = () => {
@@ -23,14 +23,14 @@ const MobileNav = (props) => {
   useEffect(() => {
     const handleClickOutside = event => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        toggleMenu();
-      }
+        if (event.target !== mobileMenuRef.current) toggleMenu();
+        }
     };
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
         document.removeEventListener('mousedown', handleClickOutside);
     };
-  }, []);
+  });
 
   return (
     <React.Fragment>
@@ -38,6 +38,7 @@ const MobileNav = (props) => {
         isOpen={menuIsOpen}
         toggle={toggleMenu}
         className={props.className}
+        ref={mobileMenuRef}
       />
 
       {menuIsOpen && (

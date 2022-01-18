@@ -2,3 +2,7 @@
   background: transparent;
   border: none;
 }
+
+.menu > svg {
+  pointer-events: none;
+}

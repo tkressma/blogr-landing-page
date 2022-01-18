@@ -1,6 +1,6 @@
 import styles from "./MobileMenu.module.css";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { forwardRef } from "react";
 
 const Path = (props) => (
   <motion.path
@@ -13,9 +13,9 @@ const Path = (props) => (
 
 const transition = { duration: 0.33 };
 
-const MobileMenu = (props) => {
+const MobileMenu = forwardRef((props, ref) => {
   return (
-    <button className={styles.menu} onClick={props.toggle}>
+    <button className={styles.menu} onClick={props.toggle} ref={ref}>
       <svg width="26" height="26" viewBox="0 0 26 26" align="center">
         <Path
           animate={props.isOpen ? "open" : "closed"}
@@ -53,6 +53,7 @@ const MobileMenu = (props) => {
       </svg>
     </button>
   );
-};
+}
+);
 
 export default MobileMenu;
