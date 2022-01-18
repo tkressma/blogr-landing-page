@@ -18,6 +18,14 @@
   text-decoration-thickness: 3px;
 }
 
-.active {
+.link.active {
   opacity: 100%;
+}
+
+.animate {
+  transition: transform .35s ease-in-out;
+}
+
+.animate.rotate {
+  transform: rotate(-180deg);
 }
