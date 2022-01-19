@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import MobileNavItem from "./MobileNavItem";
-import styles from "../NavItems.module.css";
+import styles from "./MobileNav.module.css";
 import MobileNavButton from "./MobileNavButton";
 import PrimaryButton from "../../../UI/PrimaryButton";
 import classNames from "classnames";
@@ -51,11 +51,11 @@ const MobileNav = (props) => {
       <section
         className={classNames(
           props.className,
-          styles["links-wrapper-mobile"],
+          styles["menu-wrapper-mobile"],
           !menuIsOpen && styles.fadeout
         )}
       >
-        <ul className={styles["items-list"]} ref={dropdownRef}>
+        <ul className={styles["menu-items-list"]} ref={dropdownRef}>
           {props.navItems.map((item, index) => (
             <MobileNavItem
               key={index}
