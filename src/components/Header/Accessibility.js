@@ -8,20 +8,17 @@ const Accessibility = (props) => {
     <section className={`${props.className} ${styles.accessibility}`}>
       {props.nav === "true" ? (
         <React.Fragment>
-        <a href="#" className={styles.login}>
-          Login
-        </a>
-      <PrimaryButton text="Sign Up" />
-</React.Fragment>
+          <a href="#" className={styles.login}>
+            Login
+          </a>
+          <PrimaryButton text="Sign Up" />
+        </React.Fragment>
       ) : (
         <React.Fragment>
-      <PrimaryButton text="Start for free" />
-
-        <SecondaryButton text="Learn More"/>
-
+          <PrimaryButton text="Start for free" />
+          <SecondaryButton text="Learn More" />
         </React.Fragment>
       )}
-
     </section>
   );
 };

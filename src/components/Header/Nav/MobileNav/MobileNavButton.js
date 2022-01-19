@@ -1,4 +1,4 @@
-import styles from "./MobileMenu.module.css";
+import styles from "./MobileNavButton.module.css";
 import { motion } from "framer-motion";
 import React, { forwardRef } from "react";
 
@@ -53,7 +53,6 @@ const MobileMenu = forwardRef((props, ref) => {
       </svg>
     </button>
   );
-}
-);
+});
 
 export default MobileMenu;

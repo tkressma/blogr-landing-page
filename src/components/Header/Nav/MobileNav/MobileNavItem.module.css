@@ -1,24 +1,23 @@
 .mobile-item {
-    font-family: 'Overpass', sans-serif;
-    font-weight: 600;
-    font-size: 18px;
-    color: #1F3E5A;
-    cursor: pointer;
-    display: flex;
-    padding: 12px 0px;
-    gap: 8px;
-    align-items: center;
+  font-family: "Overpass", sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: #1f3e5a;
+  cursor: pointer;
+  display: flex;
+  padding: 12px 0px;
+  gap: 8px;
+  align-items: center;
 }
 
 .mobile-item.active {
-    opacity: 75%;
+  opacity: 75%;
 }
-
 
 .animate {
-    transition: all .35s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
-  
+
 .animate.rotate {
-    transform: rotate(-180deg);
+  transform: rotate(-180deg);
 }
