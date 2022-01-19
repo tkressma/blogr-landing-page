@@ -9,14 +9,10 @@ const MobileNav = (props) => {
   const dropdownRef = useRef(null);
   const mobileMenuRef = useRef(null);
   const [menuIsOpen, setMenuIsOpen] = useState(false);
-  const [menuAnimation, setMenuAnimation] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
 
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
-    setTimeout(() => {
-      setMenuAnimation(!menuAnimation);
-    }, 10);
   };
 
   const handleActive = (index) => {
@@ -52,7 +48,7 @@ const MobileNav = (props) => {
         className={classNames(
           props.className,
           styles["menu-wrapper-mobile"],
-          !menuIsOpen && styles.fadeout
+          menuIsOpen ? styles.fadein : ""
         )}
       >
         <ul className={styles["menu-items-list"]} ref={dropdownRef}>
