@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import MobileNavItem from "./MobileNavItem";
-import styles from "../Nav/NavItems.module.css";
+import styles from "../NavItems.module.css";
 import MobileMenu from "./MobileMenu";
+import PrimaryButton from "../../../UI/PrimaryButton"
 import classNames from 'classnames';
 
 const MobileNav = (props) => {
@@ -10,6 +11,8 @@ const MobileNav = (props) => {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
   const [menuAnimation, setMenuAnimation] = useState(false);
   const [activeIndex, setActiveIndex] = useState(null);
+
+ 
 
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
@@ -44,13 +47,18 @@ const MobileNav = (props) => {
         ref={mobileMenuRef}
       />
 
-      
-        <ul className={classNames(props.className, styles["links-wrapper-mobile"], !menuIsOpen && styles.fadeout)} ref={dropdownRef} >
+      <section className={classNames(props.className, styles["links-wrapper-mobile"], !menuIsOpen && styles.fadeout)}>
+        <ul className={styles["items-list"]} ref={dropdownRef} >
 
         {props.navItems.map((item, index) => <MobileNavItem key={index} name={item.title} subItems={item.subItems} active={index===activeIndex} onClick={() => handleActive(index)}/>)}
 
         </ul>
-      
+
+        <a href="#" className={styles.login}>
+          Login
+        </a>
+        <PrimaryButton text="Sign Up" mobileNav="true"/>
+        </section>
     </React.Fragment>
   );
 };

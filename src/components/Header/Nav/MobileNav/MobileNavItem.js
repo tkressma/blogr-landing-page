@@ -1,6 +1,7 @@
 import styles from "./MobileNavItem.module.css"
 import classNames from "classnames"
-import darkArrow from "../../../assets/icon-arrow-dark.svg"
+import MobileNavSubMenu from "./MobileNavSubMenu"
+import darkArrow from "../../../../assets/icon-arrow-dark.svg"
 const MobileNavItem = (props) => {
     return (
     <>
@@ -11,7 +12,7 @@ const MobileNavItem = (props) => {
           <img src={darkArrow} className={classNames(styles.animate, props.active && styles.rotate)} alt="Arrow for dropdown menu."/>
     </li>
 
-    {props.active && <section className={styles.submenu}>hello</section>}
+    {props.active && <MobileNavSubMenu subItems={props.subItems}/>}
     </>
     )
 

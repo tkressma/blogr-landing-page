@@ -4,7 +4,7 @@ import styles from "./Nav.module.css";
 import Logo from "./Logo";
 import NavItems from "./NavItems";
 import Accessibility from "../Accessibility";
-import MobileNav from "./MobileNav";
+import MobileNav from "./MobileNav/MobileNav";
 
 const Nav = () => {
   const navItems = [

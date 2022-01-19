@@ -28,3 +28,10 @@
   background-color: white;
   color: #ff7b86;
 }
+
+.btn--mobilenav {
+  background-image: linear-gradient(
+    135deg
+    , hsl(13, 100%, 72%) 0%, hsl(353, 100%, 62%) 100%);
+    color: white;
+}

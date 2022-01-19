@@ -17,7 +17,7 @@ const Accessibility = (props) => {
         <React.Fragment>
       <PrimaryButton text="Start for free" />
 
-        <SecondaryButton text="Learn More" />
+        <SecondaryButton text="Learn More"/>
 
         </React.Fragment>
       )}

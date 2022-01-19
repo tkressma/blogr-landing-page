@@ -21,9 +21,32 @@
   animation: fadein .35s linear forwards;
 }
 
+.items-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #E8E4E4;
+}
+
+.login {
+  color: #1F3E5A;
+  font-size: 18px;
+  font-weight: 600;
+  font-family: "Overpass", sans-serif;
+  text-decoration: none;
+  margin: 1.5rem 0;
+}
+
+.login:hover {
+  opacity: 75%;
+}
+
 .fadeout {
   animation: fadeout .35s linear forwards;
 }
+
+
 
 @keyframes fadein {
   from {
