@@ -13,6 +13,7 @@ const MobileNav = (props) => {
 
   const toggleMenu = () => {
     setMenuIsOpen(!menuIsOpen);
+    setActiveIndex(null);
   };
 
   const handleActive = (index) => {

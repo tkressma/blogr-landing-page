@@ -10,13 +10,13 @@
   opacity: 0.75;
   cursor: pointer;
   margin: 0 1rem;
-  transition: opacity .35 ease-in-out;
+  transition: opacity 0.25 ease-in-out;
 }
 
 .link:hover {
   text-decoration: underline;
   text-underline-offset: 3px;
-  text-decoration-thickness: 3px;
+  text-decoration-thickness: 2px;
 }
 
 .link.active {
@@ -24,10 +24,9 @@
 }
 
 .animate {
-  transition: transform .35s ease-in-out;
+  transition: transform 0.25s ease-in-out;
 }
 
 .animate.rotate {
   transform: rotate(-180deg);
 }
-

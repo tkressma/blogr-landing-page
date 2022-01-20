@@ -11,7 +11,7 @@ const Path = (props) => (
   />
 );
 
-const transition = { duration: 0.33 };
+const transition = { duration: 0.25 };
 
 const MobileMenu = forwardRef((props, ref) => {
   return (
