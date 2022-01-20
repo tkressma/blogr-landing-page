@@ -40,9 +40,3 @@
 .fadein {
   opacity: 100%;
 }
-
-@media (min-width: 1000px) {
-  .links-wrapper {
-    padding-left: 4rem;
-  }
-}

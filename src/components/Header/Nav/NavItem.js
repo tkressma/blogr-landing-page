@@ -1,5 +1,6 @@
 import styles from "./NavItem.module.css";
 import classNames from "classnames";
+import NavSubMenu from "./NavSubMenu";
 import lightArrow from "../../../assets/icon-arrow-light.svg";
 
 const NavItem = (props) => {
@@ -15,6 +16,7 @@ const NavItem = (props) => {
         src={lightArrow}
         alt="Arrow for dropdown menu."
       />
+      {props.active && <NavSubMenu subItems={props.subItems} />}
     </li>
   );
 };

@@ -36,6 +36,7 @@ const Nav = () => {
               name={item.title}
               active={index === activeIndex}
               onClick={() => handleActive(index)}
+              subItems={item.subItems}
             />
           ))}
         </ul>
