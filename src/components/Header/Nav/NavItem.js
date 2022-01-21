@@ -16,7 +16,7 @@ const NavItem = (props) => {
         src={lightArrow}
         alt="Arrow for dropdown menu."
       />
-      {props.active && <NavSubMenu subItems={props.subItems} />}
+      <NavSubMenu subItems={props.subItems} active={props.active} />
     </li>
   );
 };

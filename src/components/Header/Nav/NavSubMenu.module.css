@@ -1,0 +1,40 @@
+.submenu {
+  display: none;
+  list-style-type: none;
+  color: black;
+  background-color: white;
+  width: 168px;
+  border-radius: 5px;
+  padding: 1.5rem;
+  top: 2rem;
+  left: -2rem;
+  box-shadow: 0px 10px 20px 8px rgba(0, 0, 0, 0.25);
+  list-style-type: none;
+  position: absolute;
+  transition: all 0.25s ease-in-out;
+}
+
+.fadein {
+  opacity: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: none;
+}
+
+.submenu__item {
+  margin: 1rem 0;
+}
+
+.submenu__item_link {
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #2d2e40;
+  text-decoration: none;
+  pointer-events: all;
+}
+
+.submenu__item_link:hover {
+  font-weight: 700;
+}
