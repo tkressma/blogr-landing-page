@@ -23,7 +23,11 @@ const MobileNav = (props) => {
   // If a user clicks out of the dropdown menu, close it.
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (
+        dropdownRef.current &&
+        menuIsOpen &&
+        !dropdownRef.current.contains(event.target)
+      ) {
         if (event.target !== mobileMenuRef.current) {
           toggleMenu();
           setActiveIndex(null);
