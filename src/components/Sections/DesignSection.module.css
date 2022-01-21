@@ -1,0 +1,13 @@
+.section {
+  width: 100%;
+  padding: 3.5rem 5% 0;
+  border: 1px solid red;
+}
+
+.section__title {
+  text-align: center;
+}
+
+.img {
+  position: absolute;
+}

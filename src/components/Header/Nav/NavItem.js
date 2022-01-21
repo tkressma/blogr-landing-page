@@ -1,14 +1,46 @@
+import React, { useState, useEffect, useRef } from "react";
 import styles from "./NavItem.module.css";
 import classNames from "classnames";
 import NavSubMenu from "./NavSubMenu";
 import lightArrow from "../../../assets/icon-arrow-light.svg";
 
 const NavItem = (props) => {
+  const [menuActive, setMenuActive] = useState(false);
+  const navItemRef = useRef(null);
+
+  const handleMenuActive = () => {
+    if (!menuActive) {
+      props.onClick();
+      setMenuActive(true);
+    } else if (menuActive) {
+      props.removeActive();
+      setMenuActive(false);
+    }
+  };
+
+  // If a user clicks out of the dropdown menu, close it.
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        navItemRef.current &&
+        menuActive &&
+        !navItemRef.current.contains(event.target)
+      ) {
+        handleMenuActive();
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  });
+
   return (
     <li
       key={props.key}
       className={classNames(styles.item, props.active && styles.active)}
-      onClick={props.onClick}
+      onClick={handleMenuActive}
+      ref={navItemRef}
     >
       {props.name}
       <img
@@ -16,7 +48,7 @@ const NavItem = (props) => {
         src={lightArrow}
         alt="Arrow for dropdown menu."
       />
-      <NavSubMenu subItems={props.subItems} active={props.active} />
+      {props.active && <NavSubMenu subItems={props.subItems} />}
     </li>
   );
 };
