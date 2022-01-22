@@ -48,7 +48,7 @@
 @media (min-width: 1000px) {
   .section {
     overflow: hidden;
-    margin-top: 150px;
+    margin-top: 71px;
     display: grid;
     grid-template-columns: 50% 50%;
     grid-template-rows: repeat(3, 1fr);
@@ -83,11 +83,7 @@
   }
 }
 
-@media (min-width: 1920px) {
-  .section-wrapper {
-    margin-left: 0;
-  }
-
+@media (min-width: 1700px) {
   .section__h2 {
     font-size: 3rem;
   }
@@ -97,13 +93,13 @@
   }
 
   .section__img_container {
-    margin-right: 0;
+    margin: 0 auto;
   }
 
   .section__article {
     width: 100%;
     justify-self: end;
     text-align: center;
-    margin: 0 auto;
+    margin-left: 0;
   }
 }
