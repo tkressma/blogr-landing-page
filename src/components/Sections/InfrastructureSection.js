@@ -4,6 +4,7 @@ import circles from "../../assets/bg-pattern-circles.svg";
 const InfrastructureSection = () => {
   return (
     <section className={styles.section}>
+      <img src={phones} className={styles["section__img"]} />
       <article className={styles["section__article"]}>
         <h2 className={styles["section__h2"]}>
           State of the Art Infrastructure
