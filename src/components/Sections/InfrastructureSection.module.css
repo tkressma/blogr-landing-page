@@ -46,6 +46,12 @@
   grid-area: 1 / 1 / 2 / 2;
 }
 
+@media (min-width: 500px) {
+  .section__article {
+    margin-top: 10rem;
+  }
+}
+
 @media (min-width: 1000px) {
   .section {
     height: 400px;
@@ -61,7 +67,10 @@
     max-width: 540px;
     text-align: left;
   }
+}
 
-  .section__img {
+@media (min-width: 2000px) {
+  .section {
+    background-position: center -500px, 0px 0px;
   }
 }
