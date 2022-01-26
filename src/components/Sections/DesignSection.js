@@ -17,7 +17,7 @@ const DesignSection = () => {
         />
       </div>
 
-      <article class={styles["section__article"]}>
+      <article className={styles["section__article"]}>
         <h3 className={styles["section__h3"]}>
           Introducing an extensible editor
         </h3>
