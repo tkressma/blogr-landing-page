@@ -22,6 +22,7 @@ const Section = (props) => {
         <img
           className={styles["section__img"]}
           src={isMobile ? props.mobileImg : props.desktopImg}
+          alt="Image of our blogging platform on a laptop."
         />
       </div>
 

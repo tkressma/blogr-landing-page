@@ -1,6 +1,6 @@
 import React from "react";
 import DesignSection from "./Section";
-import InfrastructureSection from "./InfrastructureSection";
+import Divider from "./Divider";
 import editor__desktop from "../../assets/illustration-editor-desktop.svg";
 import editor__mobile from "../../assets/illustration-editor-mobile.svg";
 import laptop__desktop from "../../assets/illustration-laptop-desktop.svg";
@@ -37,7 +37,7 @@ const Main = () => {
         mobileImg={editor__mobile}
         lastSection={false}
       />
-      <InfrastructureSection />
+      <Divider />
       <DesignSection
         sectionContent={lastSectionContent}
         desktopImg={laptop__desktop}

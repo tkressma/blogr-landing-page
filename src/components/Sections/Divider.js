@@ -1,7 +1,8 @@
-import styles from "./InfrastructureSection.module.css";
+import styles from "./Divider.module.css";
 import phones from "../../assets/illustration-phones.svg";
 import circles from "../../assets/bg-pattern-circles.svg";
-const InfrastructureSection = () => {
+
+const Divider = () => {
   return (
     <section className={styles.section}>
       <img src={phones} className={styles["section__img"]} />
@@ -20,4 +21,4 @@ const InfrastructureSection = () => {
   );
 };
 
-export default InfrastructureSection;
+export default Divider;
