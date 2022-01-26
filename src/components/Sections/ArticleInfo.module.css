@@ -1,0 +1,18 @@
+.title {
+  margin-top: 40px;
+  font-family: "Overpass", sans-serif;
+  font-weight: 600;
+  font-size: 1.75rem;
+  flex-basis: 80%;
+}
+
+.info {
+  color: #4c5862;
+  margin-top: 1rem;
+  font-family: "Overpass", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  flex-basis: 90%;
+  line-height: 28px;
+  letter-spacing: 0.5px;
+}
