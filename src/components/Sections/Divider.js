@@ -1,11 +1,14 @@
 import styles from "./Divider.module.css";
 import phones from "../../assets/illustration-phones.svg";
-import circles from "../../assets/bg-pattern-circles.svg";
 
 const Divider = () => {
   return (
     <section className={styles.section}>
-      <img src={phones} className={styles["section__img"]} />
+      <img
+        src={phones}
+        className={styles["section__img"]}
+        alt="Blogr platform on mobile phones"
+      />
       <article className={styles["section__article"]}>
         <h2 className={styles["section__h2"]}>
           State of the Art Infrastructure

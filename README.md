@@ -8,15 +8,10 @@ This is a solution to the [Blogr landing page challenge on Frontend Mentor](http
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
+- [What I learned](#what-i-learned)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -31,81 +26,78 @@ Users should be able to:
 
 ![](./screenshot.jpg)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
 - Solution URL: [Add solution URL here](https://your-solution-url.com)
 - Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-## My process
-
 ### Built with
 
 - Semantic HTML5 markup
-- CSS custom properties
+- Component-Scoped Styles with CSS Modules
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+This project proved to be quite challenging in many small ways. From layered images to animations within the navigation, there were many opportunities to learn something new.
 
-To see how you can add code snippets, see below:
+Starting with the navigation, I wanted to be able to click an item on the navbar, have a menu appear, then be able to click away from the menu to make it disappear. This in itself
+took a while to conceptualize, and I knew it would be a job for the useEffect React hook, as well as the forwardRef hook to 
+ensure clicking on the menu HTML element itself did not make it close:
 
-```html
-<h1>Some HTML code I'm proud of</h1>
-```
-```css
-.proud-of-this-css {
-  color: papayawhip;
-}
-```
 ```js
-const proudOfThisFunc = () => {
-  console.log('🎉')
-}
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        navItemRef.current &&
+        menuActive &&
+        !navItemRef.current.contains(event.target)
+      ) {
+        handleMenuActive();
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  });
 ```
 
-If you want more help with writing markdown, we'd recommend checking out [The Markdown Guide](https://www.markdownguide.org/) to learn more.
+I had to ensure the menu was first active in order to close it to prevent the menus from opening upon clicking anywhere on the screen, since handleMenuActive() simply toggles the menu.
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+I found a very useful react media query module called 'react-responsive' that was super simple to use to determine when to change the navigation from desktop to mobile. It allowed me to created a variable that I can then reference to let React know
+when to render the mobile navigation and vice versa: 
+```js
+const isMobile = useMediaQuery({ maxWidth: 768 });
 
-### Continued development
+return (
+{!isMobile ....... }
+{isMobile ........ }
+);
+```
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
+When dealing with the header and divider background images and linear-gradient, I had learned that you can have multiple background images/gradients on a single background! Not only are you able to set them, but you can also individually control various properties of each. This came in use when working on these two sections of the website, considering they have both an SVG and a gradient. Before I knew this, every time I would try and change the positioning of the SVG, the background gradient would disappear.
 
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+```css
+  background: url("../../assets/bg-pattern-circles.svg"),
+    linear-gradient(135deg, #2d2e40 0%, #3f4164 100%);
+  background-repeat: no-repeat;
+  background-size: 602px auto, 100% 100%;
+  background-position: center -280px, 0px 0px;
+```
+
+When implementing layered images into a website, I was always a bit confused as to how to approach the design. However, this project really helped further my skills in positioning images within the page! Though frustrated at times, I am happy with the end result.
+
 
 ### Useful resources
 
-- [Example resource 1](https://www.example.com) - This helped me for XYZ reason. I really liked this pattern and will use it going forward.
-- [Example resource 2](https://www.example.com) - This is an amazing article which helped me finally understand XYZ. I'd recommend it to anyone still learning this concept.
-
-**Note: Delete this note and replace the list above with resources that helped you during the challenge. These could come in handy for anyone viewing your solution or for yourself when you look back on this project in the future.**
+- [Kevin Powell's Youtube Channel](https://www.youtube.com/kevinpowell) - Seriously, this guy is great. I love his videos. CSS is confusing because it's behavior is so strange! Kevin addresses that and is amazing at clarifying why CSS does what it does.
 
 ## Author
 
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+- Frontend Mentor - [@tkressma](https://www.frontendmentor.io/profile/tkressma)
+- Twitter - [@tom_kressman](https://www.twitter.com/tom_kressman)
 
-**Note: Delete this note and add/remove/edit lines above based on what links you'd like to share.**
-
-## Acknowledgments
-
-This is where you can give a hat tip to anyone who helped you out on this project. Perhaps you worked in a team or got some inspiration from someone else's solution. This is the perfect place to give them some credit.
-
-**Note: Delete this note and edit this section's content as necessary. If you completed this challenge by yourself, feel free to delete this section entirely.**
