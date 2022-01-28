@@ -3,7 +3,7 @@
   font-family: "Overpass", sans-serif;
   font-weight: 600;
   font-size: 1.75rem;
-  flex-basis: 85%;
+  flex-basis: 75%;
 }
 
 .info {
@@ -19,6 +19,7 @@
 
 @media (min-width: 1200px) {
   .title {
+    flex-basis: 85%;
     margin-top: 4rem;
   }
 }
