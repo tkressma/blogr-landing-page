@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className={styles.footer}>
       <div className={styles["footer__container"]}>
-        <img src={logo} className={styles.logo} />
+        <img src={logo} className={styles.logo} alt="Blogr Logo" />
         <ul>
           <li className={styles["list__title"]}>Product</li>
           <li className={styles["list__item"]}>Overview</li>
