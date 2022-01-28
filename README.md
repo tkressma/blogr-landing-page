@@ -25,7 +25,6 @@ Users should be able to:
 ### Screenshot
 
 ![plot](./blogr-screenshot-desktop.png)
-![plot](./blogr-screenshot-mobile.png)
 
 ### Links
 
