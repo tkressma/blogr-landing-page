@@ -37,7 +37,6 @@ const NavItem = (props) => {
 
   return (
     <li
-      key={props.key}
       className={classNames(styles.item, props.active && styles.active)}
       onClick={handleMenuActive}
       ref={navItemRef}

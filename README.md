@@ -24,7 +24,8 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![plot](./blogr-screenshot-desktop.png)
+![plot](./blogr-screenshot-mobile.png)
 
 ### Links
 

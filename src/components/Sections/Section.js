@@ -32,8 +32,8 @@ const Section = (props) => {
           props.lastSection && styles["section__article--second"]
         )}
       >
-        {props.sectionContent.map((content) => (
-          <ArticleInfo title={content.title} info={content.info} />
+        {props.sectionContent.map((content, index) => (
+          <ArticleInfo key={index} title={content.title} info={content.info} />
         ))}
       </article>
     </section>
